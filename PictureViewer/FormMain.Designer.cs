@@ -95,7 +95,7 @@ namespace PictureViewer
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnZoomOut, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnZoomOnOff, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnZoomOnOff, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnZoomIn, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnZoom100, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnFlipVertically, 3, 0);
@@ -116,9 +116,9 @@ namespace PictureViewer
             this.btnZoomOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnZoomOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZoomOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnZoomOut.Location = new System.Drawing.Point(585, 3);
+            this.btnZoomOut.Location = new System.Drawing.Point(682, 3);
             this.btnZoomOut.Name = "btnZoomOut";
-            this.btnZoomOut.Size = new System.Drawing.Size(91, 51);
+            this.btnZoomOut.Size = new System.Drawing.Size(97, 51);
             this.btnZoomOut.TabIndex = 7;
             this.btnZoomOut.TabStop = false;
             this.btnZoomOut.UseVisualStyleBackColor = true;
@@ -129,9 +129,9 @@ namespace PictureViewer
             this.btnZoomOnOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnZoomOnOff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZoomOnOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnZoomOnOff.Location = new System.Drawing.Point(682, 3);
+            this.btnZoomOnOff.Location = new System.Drawing.Point(391, 3);
             this.btnZoomOnOff.Name = "btnZoomOnOff";
-            this.btnZoomOnOff.Size = new System.Drawing.Size(97, 51);
+            this.btnZoomOnOff.Size = new System.Drawing.Size(91, 51);
             this.btnZoomOnOff.TabIndex = 6;
             this.btnZoomOnOff.TabStop = false;
             this.btnZoomOnOff.Text = "Вкл.\r\nZoom";
@@ -144,7 +144,7 @@ namespace PictureViewer
             this.btnZoomIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnZoomIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZoomIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnZoomIn.Location = new System.Drawing.Point(488, 3);
+            this.btnZoomIn.Location = new System.Drawing.Point(585, 3);
             this.btnZoomIn.Name = "btnZoomIn";
             this.btnZoomIn.Size = new System.Drawing.Size(91, 51);
             this.btnZoomIn.TabIndex = 5;
@@ -158,7 +158,7 @@ namespace PictureViewer
             this.btnZoom100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnZoom100.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZoom100.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnZoom100.Location = new System.Drawing.Point(391, 3);
+            this.btnZoom100.Location = new System.Drawing.Point(488, 3);
             this.btnZoom100.Name = "btnZoom100";
             this.btnZoom100.Size = new System.Drawing.Size(91, 51);
             this.btnZoom100.TabIndex = 4;
@@ -230,7 +230,6 @@ namespace PictureViewer
             this.button2.TabIndex = 3;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox
             // 

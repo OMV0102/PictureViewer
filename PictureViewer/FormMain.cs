@@ -46,13 +46,6 @@ namespace PictureViewer
             ZoomOnOff = false;
         }
 
-        // ВРЕМЕННАЯ КНОПКА
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Image imgNew = PictureManager.RotateClockWise(pictureBox.Image);
-            pictureBox.Image = imgNew;
-        }
-
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             if(img != null)
@@ -88,6 +81,12 @@ namespace PictureViewer
             pictureBox.Image = PictureManager.FlipVertically(pictureBox.Image);
         }
 
+        // кнопка Включить возможность увеличивать уменьшать
+        private void btnZoomOnOff_Click(object sender, EventArgs e)
+        {
+            ZoomOnOff = !ZoomOnOff;
+        }
+
         // кнопка Отобразить фото по размеру окна
         private void btnZoom100_Click(object sender, EventArgs e)
         {
@@ -107,18 +106,12 @@ namespace PictureViewer
 
         }
 
-        // кнопка Включить возможность увеличивать уменьшать
-        private void btnZoomOnOff_Click(object sender, EventArgs e)
-        {
-            ZoomOnOff = !ZoomOnOff;
-        }
-
         // событие при изменении значения переменной ZoomOnOff
         private void ZoomOnOff_Changed(object sender, EventArgs e)
         {
             if(ZoomOnOff) // если включили изменение размера
             {
-                btnZoomOnOff.Text = "Выкл.\nZoom";
+                btnZoomOnOff.Text = "Вкл.\noom";
                 btnRotateCounterClockWise.Cursor = Cursors.No;
                 btnRotateClockWise.Cursor = Cursors.No;
                 btnFlipHorizontally.Cursor = Cursors.No;
