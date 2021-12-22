@@ -17,7 +17,8 @@ namespace PictureViewer
             InitializeComponent();
         }
 
-        private Image img;
+        private Image imgZoom;
+        private Image imgOrig;
         private int Xold = 0, Yold = 0;
         private int Xnew = 0, Ynew = 0;
         private bool _ZoomOnOff;
@@ -41,16 +42,8 @@ namespace PictureViewer
         // При загрузке формы
         private void FormMain_Load(object sender, EventArgs e)
         {
-            img = pictureBox.Image;
             ZoomOnOffHandler += ZoomOnOff_Changed;
             ZoomOnOff = false;
-        }
-
-        private void pictureBox_Paint(object sender, PaintEventArgs e)
-        {
-            if(img != null)
-                e.Graphics.DrawImage(img, Xnew, Ynew);
-            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         // кнопка Вращать ПРОТИВ часовой стрелки
@@ -133,15 +126,25 @@ namespace PictureViewer
             }
         }
 
+        // обработчик отрисовки картинки в режиме изменения размера
+        private void pictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            if (ZoomOnOff == true && imgZoom != null)
+                e.Graphics.DrawImage(imgZoom, Xnew, Ynew);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        // Обработка нажатия мыши по pictureBox
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             Xold = e.X;
             Yold = e.Y;
         }
 
+        // Обработка перемещения картинки по pictureBox
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (ZoomOnOff == true && e.Button == MouseButtons.Left)
             {
                 int dx = e.X - Xold;
                 int dy = e.Y - Yold;

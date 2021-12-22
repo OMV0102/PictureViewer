@@ -43,7 +43,6 @@ namespace PictureViewer
             this.btnFlipHorizontally = new System.Windows.Forms.Button();
             this.btnRotateClockWise = new System.Windows.Forms.Button();
             this.btnRotateCounterClockWise = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -222,15 +221,6 @@ namespace PictureViewer
             this.btnRotateCounterClockWise.UseVisualStyleBackColor = true;
             this.btnRotateCounterClockWise.Click += new System.EventHandler(this.btnRotateCounterClockWise_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(310, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // pictureBox
             // 
             this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -238,12 +228,12 @@ namespace PictureViewer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox.ErrorImage = global::PictureViewer.Properties.Resources.NoImage;
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.InitialImage = global::PictureViewer.Properties.Resources.DefaultImage;
             this.pictureBox.Location = new System.Drawing.Point(1, 27);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(782, 493);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             this.pictureBox.WaitOnLoad = true;
@@ -257,7 +247,6 @@ namespace PictureViewer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(784, 574);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -287,7 +276,6 @@ namespace PictureViewer
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnRotateCounterClockWise;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnZoomOut;
         private System.Windows.Forms.Button btnZoomOnOff;
         private System.Windows.Forms.Button btnZoomIn;
