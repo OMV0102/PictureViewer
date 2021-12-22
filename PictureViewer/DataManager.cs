@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -23,12 +24,14 @@ namespace PictureViewer
         private string ipServer = "127.0.0.1";
         private int portServer = 3333;
 
+        // Соединение
         public bool Connect()
         {
             this.client = new TcpClient(this.ipServer, this.portServer);
             return client.Connected; ;
         }
 
+        // Отправка запроса и получение ответа
         public static string SendRequestAndGetResponce(string message, out string response)
         {
             response = "";
@@ -77,9 +80,45 @@ namespace PictureViewer
             return response;
         }
 
+        // запрос // Получить картинку по имени
         public static string CreateGetImageRequest(string name)
         {
-            string request = "GET IMAGE " + name;
+            string request = "GET IMAGE " + Utility.Base64EncodeString(name);
+            return request;
+        }
+
+        // запрос // Получить список имен файлов и их количество
+        public static string CreateGetListRequest(string name)
+        {
+            string request = "GET LIST";
+            return request;
+        }
+
+        // запрос // Сохранить изменную картинку по имени
+        public static string CreatePutEditRequest(string name, Image img)
+        {
+            string ext = name.Substring(name.LastIndexOf("."));
+            name = Utility.Base64EncodeString(name);
+            string request = "PUT EDIT " + name + " ";
+            request += Utility.Base64EncodeBytes(Utility.ImageObjectToBytes(img, ext));
+            return request;
+        }
+
+        // запрос // Удалить картинку по имени
+        public static string CreatePutDeleteRequest(string name)
+        {
+            string request = "PUT DELETE " + Utility.Base64EncodeString(name);
+            return request;
+        }
+
+        // запрос // Загрузить на сервер новую картинку
+        public static string CreatePostNewRequest(string path)
+        {
+            string name = path.Substring(path.LastIndexOf("\\")); // имя картинки
+            name = Utility.Base64EncodeString(name); // имя картинки вBase64
+            string imgBase64 = Utility.Base64EncodeBytes(Utility.ImageFileToBytes(path));
+
+            string request = "POST NEW " + name + " " + imgBase64;
             return request;
         }
     }

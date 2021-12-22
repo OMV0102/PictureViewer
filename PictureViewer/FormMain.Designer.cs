@@ -228,6 +228,7 @@ namespace PictureViewer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox.ErrorImage = global::PictureViewer.Properties.Resources.NoImage;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.InitialImage = global::PictureViewer.Properties.Resources.DefaultImage;
             this.pictureBox.Location = new System.Drawing.Point(1, 27);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
