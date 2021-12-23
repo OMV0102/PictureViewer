@@ -60,8 +60,8 @@ namespace PictureViewer
             }
         }
 
-        // Преобразовать массив байтов в объект типа Image
-        public static Image BytesToImage(byte[] imgBytes)
+        // Преобразовать специальный массив байтов в объект типа Image
+        public static Image BytesToImageObject(byte[] imgBytes)
         {
             MemoryStream ms = new MemoryStream(imgBytes);
             Image img = Image.FromStream(ms);

@@ -59,16 +59,31 @@ namespace PictureViewer
         }
 
         // Увеличить изображение
-        public static Image ZoomIn(Image imgOld, int deltaSize = 100)
+        public static Image ZoomIn(Image imgOld, int deltaSizePersent = 50)
+        {
+            if (imgOld.Width >= 10000 || imgOld.Height >= 10000)
+                return imgOld;
+
+            Image imgNew = new Bitmap(imgOld.Width+deltaSizePersent, imgOld.Height+deltaSizePersent);
+            using (Graphics g = Graphics.FromImage(imgNew))
+            {
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.DrawImage(imgOld, 0, 0, imgOld.Width + deltaSizePersent, imgOld.Height + deltaSizePersent);
+                return (Image)imgNew.Clone();
+            }
+        }
+
+        // Уменьшить изображение
+        public static Image ZoomOut(Image imgOld, int deltaSizePersent = 50)
         {
             if (imgOld.Width <= 100 || imgOld.Height <= 100)
                 return imgOld;
 
-            Image imgNew = new Bitmap(imgOld.Width+deltaSize, imgOld.Height+deltaSize);
+            Image imgNew = new Bitmap(imgOld.Width - deltaSizePersent, imgOld.Height - deltaSizePersent);
             using (Graphics g = Graphics.FromImage(imgNew))
             {
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                g.DrawImage(imgOld, 0, 0, imgOld.Width + deltaSize, imgOld.Height + deltaSize);
+                g.DrawImage(imgOld, 0, 0, imgOld.Width - deltaSizePersent, imgOld.Height - deltaSizePersent);
                 return (Image)imgNew.Clone();
             }
         }
