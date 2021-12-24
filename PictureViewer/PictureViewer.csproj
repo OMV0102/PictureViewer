@@ -114,6 +114,8 @@
   <ItemGroup>
     <None Include="Resources\arrow.png" />
     <None Include="Resources\plus.png" />
+    <Content Include="help.txt" />
+    <None Include="Resources\help.txt" />
     <Content Include="команды серверу.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

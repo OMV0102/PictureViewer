@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -208,7 +209,9 @@ namespace PictureViewer
         // кнопка Справка
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            string text = "";
+            text = global::PictureViewer.Properties.Resources.help; // файл help.txt в папке ресурсы
+            MessageBox.Show(text, "Справка", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         // кнопка Обновить список

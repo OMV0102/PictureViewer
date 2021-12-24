@@ -81,6 +81,15 @@ namespace PictureViewer.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на это это этоооо справка.
+        /// </summary>
+        internal static string help {
+            get {
+                return ResourceManager.GetString("help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Horizontally {
